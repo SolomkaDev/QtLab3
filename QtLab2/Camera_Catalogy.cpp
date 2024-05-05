@@ -357,8 +357,7 @@ void Camera_Catalogy::slot_Add_data10()
     ui.dateEdit->setEnabled(true);
     ui.checkBox_IsDigital->setEnabled(true);
 
-    sizeVector = 2;
-    Items.resize(sizeVector);
+    sizeVector = sizeVector + 10;
     ui.pushButton_add10->setEnabled(false);
 
     for (int i = 0; i < sizeVector; i++)
@@ -371,6 +370,8 @@ void Camera_Catalogy::slot_Add_data10()
         ui.tableWidget->setCurrentCell(pos, 0);
         Items.append(Base());
     }
+
+    Items.resize(sizeVector);
 
     //Сведения о первом фотоапарате
     Items[0].modul = "KKLg";
@@ -388,13 +389,101 @@ void Camera_Catalogy::slot_Add_data10()
     Items[1].modul = "Jlksg";
     Items[1].category_value = 2;
     Items[1].producer_value = 4;
-    Items[1].matrix_px = 17.4;
+    Items[1].matrix_px = 15.8;
     Items[1].dimension = "50-20-30";
     Items[1].weight = 300;
     Items[1].price = 5000;
     Items[1].date_release = QDate(2015, 3, 27);
     Items[1].IsDigital = true;
     Items[1].LensOption = true;
+
+    Items[2].modul = "Hjaoras";
+    Items[2].category_value = 2;
+    Items[2].producer_value = 4;
+    Items[2].matrix_px = 12.5;
+    Items[2].dimension = "50-60-30";
+    Items[2].weight = 500;
+    Items[2].price = 14000;
+    Items[2].date_release = QDate(2015, 3, 27);
+    Items[2].IsDigital = true;
+    Items[2].LensOption = true;
+
+    Items[3].modul = "Lmfsed";
+    Items[3].category_value = 1;
+    Items[3].producer_value = 3;
+    Items[3].matrix_px = 17.4;
+    Items[3].dimension = "50-20-30";
+    Items[3].weight = 300;
+    Items[3].price = 5000;
+    Items[3].date_release = QDate(2015, 3, 27);
+    Items[3].IsDigital = true;
+    Items[3].LensOption = false;
+
+    Items[4].modul = "JMLasf";
+    Items[4].category_value = 0;
+    Items[4].producer_value = 2;
+    Items[4].matrix_px = 13;
+    Items[4].dimension = "20-20-30";
+    Items[4].weight = 5300;
+    Items[4].price = 75000;
+    Items[4].date_release = QDate(2015, 3, 27);
+    Items[4].IsDigital = true;
+    Items[4].LensOption = false;
+
+    Items[5].modul = "Aiven";
+    Items[5].category_value = 1;
+    Items[5].producer_value = 1;
+    Items[5].matrix_px = 10;
+    Items[5].dimension = "40-20-30";
+    Items[5].weight = 300;
+    Items[5].price = 8000;
+    Items[5].date_release = QDate(2015, 3, 27);
+    Items[5].IsDigital = true;
+    Items[5].LensOption = false;
+
+    Items[6].modul = "Wor";
+    Items[6].category_value = 2;
+    Items[6].producer_value = 1;
+    Items[6].matrix_px = 11.2;
+    Items[6].dimension = "50-20-30";
+    Items[6].weight = 1300;
+    Items[6].price = 67000;
+    Items[6].date_release = QDate(2015, 3, 27);
+    Items[6].IsDigital = true;
+    Items[6].LensOption = false;
+
+    Items[7].modul = "Mfdd";
+    Items[7].category_value = 0;
+    Items[7].producer_value = 2;
+    Items[7].matrix_px = 14.7;
+    Items[7].dimension = "10-20-30";
+    Items[7].weight = 5000;
+    Items[7].price = 89000;
+    Items[7].date_release = QDate(2015, 3, 27);
+    Items[7].IsDigital = true;
+    Items[7].LensOption = false;
+
+    Items[8].modul = "nifoef";
+    Items[8].category_value = 1;
+    Items[8].producer_value = 3;
+    Items[8].matrix_px = 18.4;
+    Items[8].dimension = "50-20-30";
+    Items[8].weight = 4000;
+    Items[8].price = 75000;
+    Items[8].date_release = QDate(2015, 3, 27);
+    Items[8].IsDigital = true;
+    Items[8].LensOption = false;
+
+    Items[9].modul = "Hehehehe";
+    Items[9].category_value = 2;
+    Items[9].producer_value = 1;
+    Items[9].matrix_px = 19.5;
+    Items[9].dimension = "50-20-30";
+    Items[9].weight = 5300;
+    Items[9].price = 67000;
+    Items[9].date_release = QDate(2015, 3, 27);
+    Items[9].IsDigital = true;
+    Items[9].LensOption = false;
 
     Sort();
 
@@ -408,6 +497,9 @@ void Camera_Catalogy::slot_Add_data10()
         ui.tableWidget->setItem(i, 0, new QTableWidgetItem(Table_Name));
         ui.tableWidget->setItem(i, 1, new QTableWidgetItem(Table_Price));
     }
+
+    ui.tableWidget->setCurrentCell(0, 0);
+
 
     ui.pushButton_save->setEnabled(true);
     ui.pushButton_delete->setEnabled(true);
