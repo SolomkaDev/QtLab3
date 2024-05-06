@@ -23,12 +23,12 @@
          <widget class="QTableWidget" name="tableWidget">
           <column>
            <property name="text">
-            <string>Модель</string>
+            <string>Modul</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Цена</string>
+            <string>Price</string>
            </property>
           </column>
          </widget>

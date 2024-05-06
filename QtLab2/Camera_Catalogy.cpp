@@ -337,8 +337,26 @@ void Camera_Catalogy::slot_Add_data()
     Items.append(Base()); //Добавляем пустой элемент
     Items.resize(sizeVector); //Изменяем размер массива
     
+    
 
     Sort();
+
+    //Очищаем таблицу
+    ui.tableWidget->clear();
+    ui.tableWidget->setHorizontalHeaderLabels(QStringList() << "Modul" << "Price");
+
+    //Внесение данных в таблицу заново
+    QString Table_Price;
+    for (int i = 0; i < sizeVector; i++)
+    {
+        QString Table_Name = Items[i].modul;
+        Table_Price = QString::number(Items[i].price);
+
+        ui.tableWidget->setItem(i, 0, new QTableWidgetItem(Table_Name));
+        ui.tableWidget->setItem(i, 1, new QTableWidgetItem(Table_Price));
+    }
+
+    ui.tableWidget->setCurrentCell(0, 0);
 
     ui.pushButton_save->setEnabled(true);
     ui.pushButton_delete->setEnabled(true);
@@ -524,6 +542,7 @@ void Camera_Catalogy::slot_Save_data()
     int p = ui.tableWidget->rowCount();
     ui.tableWidget->clearContents();
 
+
     QVector <Base> dop;
     dop.append(Items[n]);
 
@@ -584,6 +603,27 @@ void Camera_Catalogy::slot_Delete_data()
     Items.resize(sizeVector);
 
     Sort();
+
+    //Очищаем таблицу
+    ui.tableWidget->clear();
+    ui.tableWidget->setHorizontalHeaderLabels(QStringList() << "Modul" << "Price");
+
+    //Внесение данных в таблицу заново
+    QString Table_Price;
+    for (int i = 0; i < sizeVector; i++)
+    {
+        QString Table_Name = Items[i].modul;
+        Table_Price = QString::number(Items[i].price);
+
+        ui.tableWidget->setItem(i, 0, new QTableWidgetItem(Table_Name));
+        ui.tableWidget->setItem(i, 1, new QTableWidgetItem(Table_Price));
+    }
+
+    ui.tableWidget->setCurrentCell(0, 0);
+
+    ui.pushButton_save->setEnabled(true);
+    ui.pushButton_delete->setEnabled(true);
+    ui.pushButton_add10->setEnabled(false);
 
     int prov = ui.tableWidget->rowCount();
 

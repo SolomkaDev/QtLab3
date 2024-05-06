@@ -176,7 +176,7 @@ public:
         category_value = 0;
         producer_value = 0;
         matrix_px = 2;
-        dimension = "0-0-0";
+        dimension = "00-00-00";
         weight = 100;
         price = 1000;
         date_release = QDate::currentDate();
